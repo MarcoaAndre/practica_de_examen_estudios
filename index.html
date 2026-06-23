@@ -373,6 +373,32 @@
   }
   .alert-box b{color:var(--stamp-red-deep);}
 
+  /* Etiqueta para puntos señalados explícitamente como material de examen */
+  .exam-flag{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:var(--stamp-red);
+    color:var(--paper);
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.66rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    padding:4px 10px;
+    border-radius:3px;
+    margin-bottom:10px;
+    transform:rotate(-1deg);
+  }
+  .exam-box{
+    border:2px solid var(--stamp-red);
+    background:repeating-linear-gradient(135deg, rgba(178,58,46,0.05) 0px, rgba(178,58,46,0.05) 2px, transparent 2px, transparent 10px);
+    padding:14px 18px;
+    margin:16px 0;
+  }
+  .exam-box p, .exam-box li{font-size:0.9rem;}
+  .exam-box b{color:var(--stamp-red-deep);}
+
   /* ===== Practice Section ===== */
   .practice-shell{
     background:var(--ink);
@@ -482,6 +508,55 @@
     z-index:80;
   }
 
+  /* ===== Mini quiz embedded inside each topic section ===== */
+  .mini-quiz{
+    margin-top:30px;
+    border:2px solid var(--ink);
+    background:var(--paper-dark);
+    padding:18px 18px 14px;
+    position:relative;
+  }
+  .mini-quiz .mq-label{
+    position:absolute; top:-13px; left:14px;
+    background:var(--paper);
+    padding:0 8px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.68rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink);
+    font-weight:700;
+    border:1px solid var(--ink);
+  }
+  .mq-item{margin-bottom:14px;}
+  .mq-item:last-child{margin-bottom:0;}
+  .mq-q{font-weight:600; font-size:0.9rem; margin-bottom:8px;}
+  .mq-q .qnum{font-family:'JetBrains Mono', monospace; color:var(--stamp-red-deep); margin-right:5px;}
+  .mq-opts{display:flex; flex-wrap:wrap; gap:7px;}
+  .mq-opt{
+    border:1.5px solid var(--line);
+    background:var(--paper);
+    padding:7px 12px;
+    border-radius:3px;
+    font-family:'Inter', sans-serif;
+    font-size:0.83rem;
+    cursor:pointer;
+    color:var(--ink);
+  }
+  .mq-opt:hover{border-color:var(--ink);}
+  .mq-opt.correct{background:rgba(112,122,69,0.22); border-color:var(--olive-deep); font-weight:600;}
+  .mq-opt.wrong{background:rgba(178,58,46,0.22); border-color:var(--stamp-red-deep);}
+  .mq-fb{
+    margin-top:7px;
+    font-size:0.8rem;
+    color:var(--ink-soft);
+    display:none;
+    padding-left:2px;
+    border-left:3px solid var(--olive-deep);
+    padding-left:9px;
+  }
+  .mq-fb.show{display:block;}
+
   .term-game{
     margin-top:10px;
   }
@@ -576,9 +651,39 @@
 
   <p class="lede">Después de la <span class="hl-olive">Guerra Civil de 1948</span> y la <span class="hl-olive">Constitución de 1949</span>, Costa Rica estrena un nuevo modelo de país. El Estado deja de ser solo "árbitro" y pasa a tomar el control directo del desarrollo: <b>se vuelve Gestor</b>.</p>
 
+  <span class="exam-flag">🎯 Entra en el examen — lo que hay que saberse</span>
+  <div class="exam-box">
+    <p>Del Estado Gestor, lo que hay que saberse es: <b>① cuándo surge</b>, <b>② sus nombres</b>, y <b>③ los cambios que realizó</b>. Vea cada uno a continuación.</p>
+  </div>
+
+  <div class="grid2" style="margin-bottom:20px;">
+    <div class="card">
+      <h4>① ¿Cuándo surge?</h4>
+      <p style="font-size:0.92rem;">Surge después de la <b>Guerra Civil de 1948</b> y la <b>Constitución de 1949</b>, cuando el Estado deja de ser solo "árbitro" y pasa a intervenir directamente en la realidad social y económica del país.</p>
+    </div>
+    <div class="card amber">
+      <h4>② ¿Cuáles son sus nombres?</h4>
+      <p style="font-size:0.92rem;"><b>Gestor, Benefactor, Promotor, Paternalista o Social</b> — son cinco formas de llamar al mismo modelo de Estado (ver pág. 37 más abajo).</p>
+    </div>
+  </div>
+
+  <div class="card red" style="margin-bottom:20px;">
+    <h4>③ ¿Qué cambios realizó?</h4>
+    <ul>
+      <li><b>Ampliación del aparato estatal</b> — creó nuevas instituciones para atender necesidades específicas, lo que implicó contratar personal nuevo.</li>
+      <li><b>Cambios estructurales</b> en cultura, educación, salud pública, vivienda, turismo y producción — el Estado pasó a intervenir en todas estas áreas.</li>
+      <li>A inicios de los 80, siguió <b>ampliando el aparato estatal</b> como respuesta directa a la crisis (controles, subsidios, el CNP, etc.).</li>
+    </ul>
+  </div>
+
   <div class="keybox">
     <span class="kb-label">Aprenderse de memoria</span>
     <p><b>Estado Gestor</b> — también llamado <b>benefactor, promotor, paternalista o social</b>. Es la primera instancia en la que el Estado juega un papel sumamente importante al establecer un nuevo modelo de desarrollo, interviniendo directamente en la realidad social del país para buscar el desarrollo económico y social.</p>
+  </div>
+
+  <span class="exam-flag">🎯 Entra en el examen</span>
+  <div class="exam-box">
+    <p>Después de 1948, el nuevo Estado político se llama <b>Estado Gestor</b>. Hay que aprenderse de memoria <b>los 5 nombres de la pág. 37</b>: Gestor, Benefactor, Promotor, Paternalista, Social.</p>
   </div>
 
   <div class="pill-row">
@@ -602,9 +707,12 @@
     </div>
   </div>
 
-  <div class="alert-box">
-    <b>A inicios de los 80 el aparato estatal se amplía aún más</b> — ¿por qué? Porque la crisis obliga al gobierno a crear más controles, subsidios y mecanismos (como el CNP) para enfrentar la inflación y el desabastecimiento. Cuanto peor la crisis, más crece el aparato estatal intentando contenerla.
+  <span class="exam-flag">🎯 Entra en el examen</span>
+  <div class="exam-box">
+    <b>A inicios de los 80 se amplía el aparato estatal</b> — aprenderse el <b>por qué</b>: la crisis obliga al gobierno a crear más controles, subsidios y mecanismos (como el CNP) para enfrentar la inflación y el desabastecimiento. Cuanto peor la crisis, más crece el aparato estatal intentando contenerla.
   </div>
+
+  <div class="mini-quiz" id="mq-estado-gestor"><span class="mq-label">Comprobación rápida</span></div>
 </section>
 
 <!-- ============ SECTION 2: MSI ============ -->
@@ -616,6 +724,11 @@
   <div class="sec-kicker">Pág. 38 — Modelo de Sustitución de Importaciones</div>
 
   <p class="lede">Desde 1950, Costa Rica implementa el <b>Modelo de Sustitución de Importaciones (MSI)</b>, propuesto por la <span class="hl-olive">Comisión Económica para América Latina (CEPAL)</span>. La idea: dejar de importar tanto y empezar a producir dentro del país (textiles, refrescos, jabones).</p>
+
+  <span class="exam-flag">🎯 Entra en el examen</span>
+  <div class="exam-box">
+    <p>El modelo económico se llama <b>MSI</b>, propuesto por la <b>CEPAL</b>. Tiene dos ejes: <b>industria</b> y <b>diversificación</b> agrícola. Estos tres datos (nombre, autor, dos ejes) son la base de cualquier pregunta sobre este tema.</p>
+  </div>
 
   <div class="keybox">
     <span class="kb-label">También se llama</span>
@@ -634,11 +747,13 @@
     </div>
   </div>
 
-  <div class="alert-box">
+  <span class="exam-flag">🎯 Entra en el examen</span>
+  <div class="exam-box">
     <b>"Nuevos productos" = todo lo que NO sea café ni banano.</b> En el examen, si preguntan por un producto "no tradicional", la respuesta es caña de azúcar, carne — cualquier cosa fuera del par agroexportador tradicional (café–banano).
   </div>
 
-  <h4 style="font-family:'JetBrains Mono',monospace; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; margin:26px 0 10px; color:var(--stamp-red-deep);">★ Para escribir en el examen: 3 consecuencias del MSI</h4>
+  <span class="exam-flag">🎯 Entra en el examen — escribirlo así</span>
+  <h4 style="font-family:'JetBrains Mono',monospace; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; margin:10px 0 10px; color:var(--stamp-red-deep);">Para escribir en el examen: 3 consecuencias del MSI</h4>
   <div class="card red">
     <ul>
       <li><b>1.</b> Muchas empresas industriales quedaron en manos de <b>capital extranjero</b> (no costarricense).</li>
@@ -664,6 +779,8 @@
       </ul>
     </div>
   </div>
+
+  <div class="mini-quiz" id="mq-msi"><span class="mq-label">Comprobación rápida</span></div>
 </section>
 
 <!-- ============ SECTION 3: SOCIEDAD / CLASE MEDIA ============ -->
@@ -675,6 +792,11 @@
   <div class="sec-kicker">Pág. 39 — Nuevos actores sociales y partidos políticos</div>
 
   <p class="lede">La clase media costarricense <b>surge a partir de 1950</b>, como resultado directo del nuevo modelo de Estado Gestor. No aparece sola: la producen varios factores trabajando juntos.</p>
+
+  <span class="exam-flag">🎯 Entra en el examen</span>
+  <div class="exam-box">
+    <p><b>¿La clase media surge?</b> Sí — surge a partir de <b>1950</b>, por la combinación de la expansión del Estado, el Estado social de derecho, la industrialización (MSI), el acceso a la educación, y el crédito y consumo.</p>
+  </div>
 
   <div class="grid2">
     <div class="card">
@@ -707,6 +829,8 @@
       <li><b>Consecuencia clave para memorizar:</b> aumento de la esperanza de vida, mejores condiciones de salubridad y disminución de natalidad y mortalidad.</li>
     </ul>
   </div>
+
+  <div class="mini-quiz" id="mq-sociedad"><span class="mq-label">Comprobación rápida</span></div>
 </section>
 
 <!-- ============ SECTION 4: CONCEPTOS ============ -->
@@ -716,6 +840,11 @@
     <div class="sec-title">Glosario de conceptos clave</div>
   </div>
   <div class="sec-kicker">Pág. 43 – 44 · Valen 15 puntos · Se identifican con ejemplos</div>
+
+  <span class="exam-flag">🎯 Entra en el examen — 15 puntos</span>
+  <div class="exam-box">
+    <p>En la <b>pág. 43 y 44</b> están los conceptos. <b>Todos entran</b> en el examen. Valen <b>15 puntos</b> en total y hay que <b>identificarlos mediante ejemplos</b>, no solo recitar la definición de memoria.</p>
+  </div>
 
   <div class="alert-box">
     <b>Importante:</b> en el examen no basta con definir — hay que <b>identificar el concepto a partir de un ejemplo</b>. Por eso cada tarjeta de abajo trae un ejemplo aplicado. Estudie reconociendo la idea, no solo la palabra.
@@ -790,6 +919,8 @@
     <span class="kb-label">Cadena lógica para recordar</span>
     <p class="mono" style="font-size:0.85rem;">Presupuesto → si gasta de más → Déficit Fiscal → se cubre con Impuestos o Deuda → CR usó Deuda Interna y Externa</p>
   </div>
+
+  <div class="mini-quiz" id="mq-conceptos"><span class="mq-label">Comprobación rápida</span></div>
 </section>
 
 <!-- ============ SECTION 5: CRISIS 80s ============ -->
@@ -804,7 +935,13 @@
 
   <p style="font-size:0.93rem; margin-bottom:18px;">Costa Rica, dependiente de importar energéticos y de exportar productos agrícolas, sufre una <b>profunda crisis</b> producto del aumento en la inflación (por el costo de los energéticos), la caída de precios de exportación, y la crisis sociopolítica regional.</p>
 
-  <h4 style="font-family:'JetBrains Mono',monospace; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; margin:22px 0 10px; color:var(--stamp-red-deep);">Factores EXTERNOS de la crisis</h4>
+  <span class="exam-flag">🎯 Entra en el examen</span>
+  <div class="exam-box">
+    <p><b>¿Por qué había crisis en Costa Rica en los 80?</b> Por una combinación de factores externos (subida del petróleo, recesión mundial, cierre del crédito internacional) y factores internos (mal uso de recursos públicos, endeudamiento, crecimiento desmedido del aparato estatal). Vea el detalle de cada factor abajo — <b>todos pueden salir en el examen</b>.</p>
+  </div>
+
+  <span class="exam-flag">🎯 Entra en el examen — todos los factores</span>
+  <h4 style="font-family:'JetBrains Mono',monospace; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; margin:10px 0 10px; color:var(--stamp-red-deep);">Factores EXTERNOS de la crisis</h4>
   <div class="card red">
     <ul>
       <li>La recesión mundial, provocada por el aumento en los precios de los hidrocarburos.</li>
@@ -825,6 +962,7 @@
       <li>Presión de los sectores sociales y la burocracia estatal sobre el gasto salarial.</li>
     </ul>
   </div>
+  <p style="font-size:0.85rem; color:var(--ink-soft);">↑ El profe indicó que <b>todos</b> estos factores (externos e internos) pueden salir en el examen — no se salte ninguno al estudiar.</p>
 
   <h4 style="font-family:'JetBrains Mono',monospace; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; margin:26px 0 10px; color:var(--olive-deep);">Efectos de la crisis en CR (década de los 80)</h4>
   <table class="compare">
@@ -837,9 +975,10 @@
   </table>
   <p style="font-size:0.85rem; color:var(--ink-soft);"><b>Moratoria</b> = el país debía y no había pagado.</p>
 
-  <h4 style="font-family:'JetBrains Mono',monospace; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; margin:26px 0 10px; color:var(--stamp-red-deep);">El Consejo Nacional de Producción (CNP) y la carestía</h4>
+  <span class="exam-flag">🎯 Entra en el examen</span>
+  <h4 style="font-family:'JetBrains Mono',monospace; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; margin:10px 0 10px; color:var(--stamp-red-deep);">El Consejo Nacional de Producción (CNP) y la carestía</h4>
   <div class="card red">
-    <p style="font-size:0.92rem; margin-bottom:10px;"><b>¿Por qué se creó / reforzó el CNP?</b> El gobierno habilitó la venta de productos de la canasta básica a precios más bajos que el comercio tradicional, mediante expendios estatales, para <b>evitar la especulación de precios</b>, proveer granos básicos y dar cupones de ayuda social.</p>
+    <p style="font-size:0.92rem; margin-bottom:10px;"><b>¿Qué es el CNP y por qué se creó / reforzó?</b> El gobierno habilitó la venta de productos de la canasta básica a precios más bajos que el comercio tradicional, mediante expendios estatales, para <b>evitar la especulación de precios</b>, proveer granos básicos y dar cupones de ayuda social.</p>
     <p style="font-size:0.92rem;"><b>¿Qué era la "carestía de la vida"?</b> El encarecimiento generalizado de todos los servicios y productos (electricidad, agua, combustible, alimentos). La gente debía "hacer malabares" para conseguir arroz, frijoles o manteca, e incluso recurrir al <b>trueque</b> de granos entre familias y vecinos.</p>
   </div>
 
@@ -861,6 +1000,8 @@
       </ul>
     </div>
   </div>
+
+  <div class="mini-quiz" id="mq-crisis80"><span class="mq-label">Comprobación rápida</span></div>
 </section>
 
 <!-- ============ SECTION 6: CARAZO ============ -->
@@ -879,12 +1020,14 @@
     </div>
   </div>
 
-  <div class="alert-box">
-    <b>Dato central:</b> Rodrigo Carazo entró en conflicto con el FMI argumentando que aceptar las condiciones exigidas <b>reñían con la dignidad del país</b>, y <b>expulsó al organismo internacional</b> de Costa Rica. Se negó a negociar con organismos financieros hasta el final de su mandato.
+  <span class="exam-flag">🎯 Entra en el examen</span>
+  <div class="exam-box">
+    <p><b>Dato central:</b> el gobierno de Rodrigo Carazo <b>rompió relaciones con el Fondo Monetario Internacional</b>. Entró en conflicto con el FMI argumentando que aceptar las condiciones exigidas <b>reñían con la dignidad del país</b>, y <b>expulsó al organismo internacional</b> de Costa Rica. Se negó a negociar con organismos financieros hasta el final de su mandato.</p>
   </div>
 
-  <h4 style="font-family:'JetBrains Mono',monospace; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; margin:24px 0 10px; color:var(--stamp-red-deep);">★ Para escribir en el examen: 4 problemáticas del gobierno de Carazo (desarrollo)</h4>
-  <p style="font-size:0.85rem; color:var(--ink-soft); margin-bottom:12px;">Recuerde: aprenderse el <b>nombre</b>, no solo el concepto.</p>
+  <span class="exam-flag">🎯 Entra en el examen — escribirlo así</span>
+  <h4 style="font-family:'JetBrains Mono',monospace; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; margin:10px 0 6px; color:var(--stamp-red-deep);">Para escribir en el examen (desarrollo): 4 problemáticas del gobierno de Carazo</h4>
+  <p style="font-size:0.85rem; color:var(--ink-soft); margin-bottom:12px;">Recuerde: hay que saberse <b>el nombre</b> de cada problemática, no solo el concepto.</p>
 
   <div class="card red">
     <ul>
@@ -898,6 +1041,8 @@
 
   <h4 style="font-family:'JetBrains Mono',monospace; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; margin:24px 0 10px; color:var(--olive-deep);">El costo del endeudamiento</h4>
   <p style="font-size:0.92rem;">El costo del endeudamiento externo se disparó y el gobierno se vio obligado a pedir ayuda al FMI — pero a cambio le solicitaban deshacerse de empresas estatales ineficientes y ajustar el gasto. En 1980, el costo de la canasta básica alimentaria requería aproximadamente el <b>60% del salario promedio</b>; para 1982, esa proporción subió al <b>86%</b>, quedando apenas un 14% para cubrir otros gastos.</p>
+
+  <div class="mini-quiz" id="mq-carazo"><span class="mq-label">Comprobación rápida</span></div>
 </section>
 
 <!-- ============ SECTION 7: MONGE ============ -->
@@ -916,30 +1061,36 @@
     </div>
   </div>
 
-  <div class="alert-box">
-    <b>Lo más importante:</b> Monge <b>restableció las relaciones financieras externas</b> con el FMI y la banca privada, y <b>moderó y controló el gasto público</b>. Esto se hizo en el contexto de la crisis política en Centroamérica.
+  <span class="exam-flag">🎯 Entra en el examen</span>
+  <div class="exam-box">
+    <p><b>Relaciones con organismos / Fondo Monetario Internacional:</b> Monge <b>restableció las relaciones financieras externas</b> con el FMI y la banca privada (a diferencia de la ruptura de Carazo), y <b>moderó y controló el gasto público</b>. Esto se hizo en el contexto de la crisis política en Centroamérica.</p>
   </div>
 
-  <h4 style="font-family:'JetBrains Mono',monospace; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; margin:24px 0 10px; color:var(--stamp-red-deep);">Medidas del gobierno de Monge para salir de la crisis</h4>
+  <span class="exam-flag">🎯 Entra en el examen — desarrollo</span>
+  <h4 style="font-family:'JetBrains Mono',monospace; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; margin:10px 0 10px; color:var(--stamp-red-deep);">Medidas del gobierno de Monge para salir de la crisis</h4>
   <div class="card red">
     <ul>
       <li><b>1. Restableció las relaciones financieras externas</b>, en especial con el Fondo Monetario Internacional, lo cual volvió a Costa Rica elegible para negociaciones con la banca privada y los organismos internacionales.</li>
       <li><b>2. Moderó y controló el gasto público.</b></li>
-      <li><b>Elevó los impuestos</b> como vía para mejorar/elevar la economía.</li>
+      <li><b>3. Se elevaron los impuestos</b> como vía para elevar/mejorar la economía.</li>
     </ul>
   </div>
 
-  <h4 style="font-family:'JetBrains Mono',monospace; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; margin:24px 0 10px; color:var(--olive-deep);">Aprenderse: PAES</h4>
+  <span class="exam-flag">🎯 Entra en el examen — sigla PAES</span>
+  <h4 style="font-family:'JetBrains Mono',monospace; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; margin:10px 0 10px; color:var(--olive-deep);">Aprenderse: PAES</h4>
   <div class="keybox">
     <span class="kb-label">Sigla clave</span>
     <p><b>PAES = Programas de Ajuste Estructural.</b> Costa Rica permitió las actividades de la CIA y la guerrilla antisandinista (Contra) a lo largo de la frontera norte, y de esta manera se convirtió en un candidato preferido para recibir ayuda y aprobar los PAES — programas destinados a reducir el déficit fiscal por parte del gobierno estadounidense.</p>
   </div>
 
-  <div class="alert-box">
-    <b>¿Qué le pidió la CIA a Costa Rica?</b> Permitir que se usara el territorio de la frontera norte con Nicaragua para que operara la guerrilla antisandinista conocida como "la Contra". A cambio, Costa Rica recibió ayuda económica y se convirtió en candidato elegible para los PAES.
+  <span class="exam-flag">🎯 Entra en el examen</span>
+  <div class="exam-box">
+    <p><b>¿Qué le pidió la CIA a Costa Rica?</b> Permitir que se usara el territorio de la frontera norte con Nicaragua para que operara la guerrilla antisandinista conocida como "la Contra". A cambio, Costa Rica recibió ayuda económica (la CIA le prestó/dio dinero a Costa Rica) y se convirtió en candidato elegible para los <b>PAES</b>.</p>
   </div>
 
   <p style="font-size:0.9rem; margin-top:14px;"><b>En resumen del vínculo:</b> la ayuda económica de EE.UU. (a través de la CIA y los PAES) llegó como contrapartida al permiso de usar territorio costarricense contra el gobierno sandinista de Nicaragua.</p>
+
+  <div class="mini-quiz" id="mq-monge"><span class="mq-label">Comprobación rápida</span></div>
 </section>
 
 <!-- ============ SECTION 8: CENTROAMERICA ============ -->
@@ -951,6 +1102,11 @@
   <div class="sec-kicker">Pág. 49 — Guerra Fría en la región</div>
 
   <p class="lede">Centroamérica se convirtió en escenario del enfrentamiento entre <b>Estados Unidos</b> y la <b>Unión Soviética</b> dentro de la Guerra Fría. Había <b>guerrillas</b> de izquierda en El Salvador, Guatemala y Nicaragua (el gobierno revolucionario sandinista).</p>
+
+  <span class="exam-flag">🎯 Entra en el examen</span>
+  <div class="exam-box">
+    <p><b>¿Qué pasaba en Centroamérica en los 80?</b> Había <b>guerrillas</b> en El Salvador, Guatemala y Nicaragua, dentro del enfrentamiento entre EE.UU. y la URSS (Guerra Fría), agravado por la desigualdad social y una élite enriquecida e influyente.</p>
+  </div>
 
   <div class="timeline">
     <div class="tl-item">
@@ -971,6 +1127,8 @@
     <span class="kb-label">Idea para recordar</span>
     <p>Centroamérica en los 80 = guerrillas + Guerra Fría + desigualdad social. Costa Rica, sin guerra interna, quedó atrapada entre la crisis económica propia y la crisis política regional que afectaba su entorno.</p>
   </div>
+
+  <div class="mini-quiz" id="mq-centroamerica"><span class="mq-label">Comprobación rápida</span></div>
 </section>
 
 <!-- ============ PRACTICE SECTION ============ -->
@@ -980,7 +1138,7 @@
       <div class="sec-num stamp-font">09</div>
       <div class="sec-title" style="color:var(--paper);">Sala de interrogatorio — práctica</div>
     </div>
-    <div class="sec-kicker">12 preguntas · responda antes de revisar la clave</div>
+    <div class="sec-kicker">23 preguntas de opción múltiple + 8 de desarrollo · responda antes de revisar la clave</div>
 
     <div id="quiz-container"></div>
 
@@ -992,7 +1150,7 @@
   </div>
 </div>
 
-<div class="score-strip" id="scoreStrip">RESPONDIDAS: 0 / 12 &nbsp;·&nbsp; CORRECTAS: 0</div>
+<div class="score-strip" id="scoreStrip">RESPONDIDAS: 0 / 23 &nbsp;·&nbsp; CORRECTAS: 0</div>
 
 <footer>
   EXPEDIENTE PREPARADO PARA REPASO PERSONAL · ESTUDIOS SOCIALES · DUODÉCIMO AÑO · 2026
@@ -1071,6 +1229,72 @@ const quizData = [
     opts:["Conflictos comerciales con Europa","Guerrillas y enfrentamiento entre EE.UU. y la URSS","Desastres naturales","Acuerdos de libre comercio"],
     correct:1,
     fb:"Había guerrillas en El Salvador, Guatemala y Nicaragua dentro del enfrentamiento entre EE.UU. y la URSS, agravado por la desigualdad social."
+  },
+  {
+    q:"¿Qué provocó la caída inicial en la producción mundial de crudo a finales de los 70?",
+    opts:["Un terremoto en Arabia Saudita","La inestabilidad en Irán","Una huelga en Venezuela","La crisis bananera en CR"],
+    correct:1,
+    fb:"La inestabilidad en Irán (segundo productor mundial de crudo) causó una caída de 3,5 millones de barriles al día."
+  },
+  {
+    q:"¿Hasta cuánto subió el precio del crudo en 1980 tras el ataque de Irak a Irán?",
+    opts:["12 dólares","20 dólares","34 dólares","50 dólares"],
+    correct:2,
+    fb:"El precio del crudo subió hasta los 34 dólares, diez veces más caro que a inicios de 1973."
+  },
+  {
+    q:"Identifique el concepto: 'cuando el gobierno gasta más dinero del que gana'.",
+    opts:["Superávit fiscal","Déficit fiscal","Devaluación","Recesión"],
+    correct:1,
+    fb:"Un déficit fiscal ocurre cuando se gasta más dinero del que se gana."
+  },
+  {
+    q:"Identifique el concepto: 'disminución del valor de una moneda frente a otra moneda'.",
+    opts:["Inflación","Devaluación / depreciación","Deuda interna","Responsabilidad tributaria"],
+    correct:1,
+    fb:"La devaluación, también llamada depreciación, es la disminución del valor de una moneda en términos de otra."
+  },
+  {
+    q:"¿Cuál es la diferencia clave entre deuda interna y deuda externa?",
+    opts:["No hay diferencia","La externa se debe a entidades del exterior; la interna se paga en moneda nacional dentro del país","La interna siempre es mayor","La externa no genera intereses"],
+    correct:1,
+    fb:"La deuda externa implica salida de divisas hacia acreedores extranjeros; la deuda interna se paga en moneda nacional dentro del país."
+  },
+  {
+    q:"¿Cuál de estos es un factor INTERNO de la crisis de los 80 en CR (no externo)?",
+    opts:["El aumento del precio del petróleo","La crisis política centroamericana","El inadecuado uso de los recursos públicos","La sobreoferta mundial de productos agrícolas"],
+    correct:2,
+    fb:"El inadecuado uso de los recursos públicos es un factor interno; los otros tres son factores externos de la crisis."
+  },
+  {
+    q:"Durante el gobierno de Carazo, ¿qué pasó con la huelga bananera?",
+    opts:["Duró 5 días","Duró 35 días","Nunca ocurrió","Duró un año completo"],
+    correct:1,
+    fb:"La huelga bananera tuvo una duración de 35 días, una de las problemáticas mencionadas del gobierno de Carazo."
+  },
+  {
+    q:"¿Qué pasó con el régimen de invalidez, vejez y muerte durante el gobierno de Carazo?",
+    opts:["Se fortaleció con nuevas reservas","Se desfinanció porque el dinero se gastó en atención de pacientes en vez de capitalizar pensiones","Se eliminó por completo","Pasó a manos privadas"],
+    correct:1,
+    fb:"Se desfinanció: el dinero se gastó en atención de pacientes en lugar de capitalizar las cuotas de los asegurados para sus futuras pensiones."
+  },
+  {
+    q:"¿Qué porcentaje del salario promedio representaba la canasta básica en 1982?",
+    opts:["14%","60%","86%","100%"],
+    correct:2,
+    fb:"En 1980 era aproximadamente 60% del salario promedio; para 1982 subió al 86%, quedando solo 14% para otros gastos."
+  },
+  {
+    q:"¿Qué relación tuvo Costa Rica con la guerrilla antisandinista ('la Contra')?",
+    opts:["La combatió activamente con su ejército","Permitió que operara desde la frontera norte a cambio de ayuda económica","No tuvo ninguna relación","La declaró enemiga del Estado"],
+    correct:1,
+    fb:"Costa Rica permitió actividades de la CIA y de la Contra en la frontera norte con Nicaragua, lo cual la hizo candidata para recibir ayuda y los PAES."
+  },
+  {
+    q:"Identifique el concepto: 'clase trabajadora asociada con obreros, agricultores y campesinos de origen humilde'.",
+    opts:["Capitalismo","Burguesía","Proletariado","Aparato estatal"],
+    correct:2,
+    fb:"El proletariado es la clase trabajadora, generalmente asociada con obreros, agricultores y campesinos de origen humilde."
   }
 ];
 
@@ -1090,6 +1314,22 @@ const openData = [
   {
     q:"Mencione las medidas que tomó el gobierno de Monge para salir de la crisis.",
     a:"Restableció las relaciones financieras externas (especialmente con el FMI), moderó y controló el gasto público, y elevó los impuestos para mejorar la economía."
+  },
+  {
+    q:"Explique por qué Costa Rica estaba en crisis en la década de los 80 (origen internacional + interno).",
+    a:"Origen internacional: la inestabilidad en Irán y la guerra Irán-Irak dispararon el precio del crudo a 34 dólares, frenando la economía mundial. Esto se combinó con factores internos como el inadecuado uso de recursos públicos, el creciente endeudamiento y el crecimiento del aparato estatal, generando inflación, pobreza y crisis sociopolítica regional."
+  },
+  {
+    q:"Explique qué era el Consejo Nacional de Producción (CNP) y por qué se reforzó su papel en los 80.",
+    a:"El CNP es la institución estatal encargada de la producción y distribución de alimentos. Se reforzó su papel para vender productos de la canasta básica en expendios a precios más bajos que el comercio tradicional, buscando evitar la especulación de precios, proveer granos básicos y dar cupones de ayuda social ante la carestía de la vida."
+  },
+  {
+    q:"Explique las 3 consecuencias del Modelo de Sustitución de Importaciones (MSI) que deben escribirse en el examen.",
+    a:"1. Muchas empresas industriales quedaron en manos de capital extranjero. 2. Las tecnologías requeridas por el nuevo modelo no se producían en el país, por lo que fue necesario importarlas. 3. El crecimiento económico no fue integral: se concentró en el GAM, generando problemas sociales y ambientales."
+  },
+  {
+    q:"¿Por qué se dice que la clase media costarricense surge a partir de 1950? Mencione al menos 3 factores.",
+    a:"Surge por la expansión del Estado (empleos estables en el sector público), el Estado social de derecho (CCSS, Código de Trabajo), la industrialización por el MSI (nuevos empleos urbanos y técnicos), el mayor acceso a la educación, y el acceso a crédito y consumo."
   }
 ];
 
@@ -1101,8 +1341,176 @@ const flipData = [
   {q:"Déficit Fiscal", a:"Ocurre cuando se gasta más dinero del que se gana."},
   {q:"Devaluación", a:"Disminución del valor de una moneda frente a otra (también llamada depreciación)."},
   {q:"Recesión", a:"El crecimiento económico se frena, la producción se reduce, sube el desempleo."},
-  {q:"Moratoria", a:"El país debía dinero y no había pagado a sus acreedores."}
+  {q:"Moratoria", a:"El país debía dinero y no había pagado a sus acreedores."},
+  {q:"Superávit Fiscal", a:"Los ingresos son mayores que los gastos en un periodo, normalmente un año."},
+  {q:"Responsabilidad Tributaria", a:"El deber que tiene todo ciudadano de pagar los impuestos correspondientes al sistema de recaudación."},
+  {q:"Proletariado", a:"Clase trabajadora asociada con obreros, agricultores y campesinos de origen humilde."},
+  {q:"Capitalismo", a:"Sistema económico basado en propiedad privada de los medios de producción y el mercado como asignador de recursos."},
+  {q:"Estado Gestor", a:"También llamado benefactor, promotor, paternalista o social. Interviene directamente en la realidad social y económica del país."},
+  {q:"PAES", a:"Programas de Ajuste Estructural, ligados a la ayuda condicionada de EE.UU. a cambio de permitir actividades antisandinistas en la frontera norte."},
+  {q:"MSI", a:"Modelo de Sustitución de Importaciones, propuesto por la CEPAL desde 1950, también llamado 'desarrollo hacia dentro'."},
+  {q:"CNP", a:"Consejo Nacional de Producción: vendía productos básicos a precios bajos para evitar la especulación y la carestía."}
 ];
+
+// ===== Mini-quizzes por tema (comprobación rápida dentro de cada sección) =====
+const miniQuizData = {
+  "estado-gestor":[
+    {
+      q:"¿Qué evento histórico antecede directamente al nuevo modelo de Estado?",
+      opts:["La Guerra Civil de 1948","La crisis del 2008","La independencia de 1821"],
+      correct:0,
+      fb:"Después de la Guerra Civil de 1948 y la Constitución de 1949 surge el nuevo modelo de Estado Gestor."
+    },
+    {
+      q:"¿Cuál de estos NO es sinónimo de 'Estado Gestor'?",
+      opts:["Benefactor","Paternalista","Estado mínimo"],
+      correct:2,
+      fb:"Estado Gestor = benefactor, promotor, paternalista o social. 'Estado mínimo' es lo opuesto: un Estado que no interviene."
+    },
+    {
+      q:"¿Cuál de estos es un cambio que realizó el Estado Gestor?",
+      opts:["Reducir el aparato estatal y cerrar instituciones","Ampliar el aparato estatal creando nuevas instituciones","Eliminar la intervención del Estado en la economía"],
+      correct:1,
+      fb:"El Estado Gestor amplió el aparato estatal (nuevas instituciones, más personal) y generó cambios estructurales en educación, salud, vivienda, turismo y producción."
+    }
+  ],
+  "msi":[
+    {
+      q:"¿Qué institución promovió el MSI como alternativa de progreso regional?",
+      opts:["El FMI","La CEPAL","La ONU"],
+      correct:1,
+      fb:"La Comisión Económica para América Latina (CEPAL) promovió el MSI desde 1950."
+    },
+    {
+      q:"¿Cuál de las siguientes es una de las 3 consecuencias del MSI para escribir en el examen?",
+      opts:["Mayor producción de tecnología nacional","Empresas en manos de capital extranjero","Crecimiento repartido equitativamente en todo el país"],
+      correct:1,
+      fb:"Una consecuencia clave: muchas empresas industriales quedaron en manos de capital extranjero."
+    }
+  ],
+  "sociedad":[
+    {
+      q:"¿Desde qué año se ubica el surgimiento de la clase media en Costa Rica?",
+      opts:["1950","1980","1948"],
+      correct:0,
+      fb:"La clase media surge a partir de 1950, impulsada por la expansión del Estado y el MSI."
+    },
+    {
+      q:"¿En qué año se fundó el PUSC, uniendo a la oposición dispersa?",
+      opts:["1953","1975","1983"],
+      correct:2,
+      fb:"El Partido Unidad Social Cristiana (PUSC) se fundó en 1983, uniendo a la oposición frente al dominio del PLN."
+    }
+  ],
+  "conceptos":[
+    {
+      q:"Si el gobierno gasta más de lo que recauda en impuestos, eso es:",
+      opts:["Superávit fiscal","Déficit fiscal","Devaluación"],
+      correct:1,
+      fb:"El déficit fiscal ocurre cuando se gasta más dinero del que se gana."
+    },
+    {
+      q:"El dólar pasando de ₡8,60 a ₡60 en tres meses es un ejemplo de:",
+      opts:["Devaluación de la moneda","Superávit fiscal","Responsabilidad tributaria"],
+      correct:0,
+      fb:"Esa caída del valor del colón frente al dólar es un ejemplo claro de devaluación (depreciación)."
+    },
+    {
+      q:"La deuda que se paga en moneda nacional, dentro del país, se llama:",
+      opts:["Deuda externa","Deuda interna","Recesión"],
+      correct:1,
+      fb:"La deuda interna se paga en moneda nacional, a diferencia de la externa que implica salida de divisas."
+    }
+  ],
+  "crisis80":[
+    {
+      q:"¿Cuál es un factor EXTERNO de la crisis (no interno)?",
+      opts:["Inadecuado uso de recursos públicos","El incremento de las tasas de interés internacional","Crecimiento del aparato estatal"],
+      correct:1,
+      fb:"El incremento de las tasas de interés que encarecieron el financiamiento internacional es un factor externo."
+    },
+    {
+      q:"¿Para qué se vendían productos en los expendios del CNP?",
+      opts:["Para exportarlos","Para evitar la especulación de precios y proveer granos básicos","Para subir el precio de la canasta básica"],
+      correct:1,
+      fb:"El CNP vendía a precios bajos para evitar la especulación y proveer granos básicos a la población."
+    }
+  ],
+  "carazo":[
+    {
+      q:"¿Qué hizo Carazo con el FMI al considerar que sus condiciones reñían con la dignidad del país?",
+      opts:["Aceptó todas sus exigencias","Lo expulsó y rompió relaciones","Le pidió más préstamos"],
+      correct:1,
+      fb:"Carazo entró en conflicto con el FMI y expulsó al organismo internacional de Costa Rica."
+    },
+    {
+      q:"¿Cuánto alcanzó la pobreza durante el gobierno de Carazo?",
+      opts:["18% de la población","54% de la población","90% de la población"],
+      correct:1,
+      fb:"La pobreza alcanzó al 54% de la población durante la crisis del gobierno de Carazo."
+    }
+  ],
+  "monge":[
+    {
+      q:"¿Qué hizo Monge con las relaciones financieras externas, a diferencia de Carazo?",
+      opts:["Las rompió definitivamente","Las restableció, en especial con el FMI","No tuvo relación con organismos internacionales"],
+      correct:1,
+      fb:"Monge restableció las relaciones financieras externas, especialmente con el FMI, a diferencia de la ruptura de Carazo."
+    },
+    {
+      q:"¿Qué significa la sigla PAES?",
+      opts:["Programas de Ajuste Estructural","Plan de Ayuda Económica Sandinista","Proyecto Agrícola de Exportación Sostenible"],
+      correct:0,
+      fb:"PAES = Programas de Ajuste Estructural, vinculados a la ayuda condicionada de EE.UU."
+    }
+  ],
+  "centroamerica":[
+    {
+      q:"¿Quiénes se enfrentaban en la Guerra Fría que afectó a Centroamérica?",
+      opts:["Estados Unidos y la Unión Soviética","Costa Rica y Nicaragua","Francia e Inglaterra"],
+      correct:0,
+      fb:"El enfrentamiento entre EE.UU. y la URSS se desarrolló en los años 80 con guerrillas en varios países centroamericanos."
+    },
+    {
+      q:"¿Qué tipo de grupos armados existían en El Salvador, Guatemala y Nicaragua en los 80?",
+      opts:["Guerrillas de izquierda","Ejércitos regulares de la ONU","Fuerzas navales"],
+      correct:0,
+      fb:"Había guerrillas de izquierda enfrentadas a los gobiernos, en el marco de la Guerra Fría regional."
+    }
+  ]
+};
+
+function buildMiniQuizzes(){
+  Object.keys(miniQuizData).forEach(sectionId=>{
+    const container = document.getElementById(`mq-${sectionId}`);
+    if(!container) return;
+    miniQuizData[sectionId].forEach((item,i)=>{
+      const wrap = document.createElement('div');
+      wrap.className = 'mq-item';
+      wrap.innerHTML = `
+        <div class="mq-q"><span class="qnum">${i+1}.</span>${item.q}</div>
+        <div class="mq-opts">
+          ${item.opts.map((o,j)=>`<button class="mq-opt" data-j="${j}">${o}</button>`).join('')}
+        </div>
+        <div class="mq-fb">${item.fb}</div>
+      `;
+      const correctIdx = item.correct;
+      wrap.querySelectorAll('.mq-opt').forEach((btn,j)=>{
+        btn.addEventListener('click', ()=>{
+          if(wrap.dataset.answered) return;
+          wrap.dataset.answered = "1";
+          wrap.querySelectorAll('.mq-opt').forEach((b,k)=>{
+            b.disabled = true;
+            if(k === correctIdx) b.classList.add('correct');
+            else if(k === j) b.classList.add('wrong');
+          });
+          wrap.querySelector('.mq-fb').classList.add('show');
+        });
+      });
+      container.appendChild(wrap);
+    });
+  });
+}
 
 function buildQuiz(){
   const c = document.getElementById('quiz-container');
@@ -1174,6 +1582,7 @@ function buildFlip(){
   });
 }
 
+buildMiniQuizzes();
 buildQuiz();
 buildOpen();
 buildFlip();
